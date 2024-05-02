@@ -1,0 +1,266 @@
+* {
+  font-family: 'Outfit', sans-serif;
+  color: #1f292d;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #e1ebec;
+  margin: 0;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1108px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+.logo {
+  width: 510px;
+  height: 338px;
+  
+  font-size: 128px;
+}
+
+.hero-content {
+  width: min-content;
+  position: relative;
+  margin-inline: auto;
+}
+
+.hero-paragraph {
+  margin-top: 8px;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.30ch;
+}
+
+.hero-decoration {
+  position: absolute;
+  width: 202px;
+  top: 0;
+  background-color: #496971;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 80%;
+}
+.hero-decoration::after {
+  content: '';
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 101px solid transparent;
+  border-right: 101px solid transparent;
+  
+  border-bottom: 101px solid #e1ebec;
+}
+
+@media (min-width: 900px) {
+  .hero-decoration {
+      bottom: 11%;
+      left: max(calc((100vw - 1108px) / 2 + 510px + 84px), 510px + 84px);
+      transform: translateX(0);
+  }
+  .hero-content {
+      margin-inline: 0;
+  }
+}
+
+
+:root {
+  font-size: 15px;
+}
+
+.logo-decoration {
+  --unit: calc(1ch / 10);
+  width: calc(100% - var(--unit) * 10);
+  margin-inline: auto;
+  background-color: #496971;
+  height: calc(6 * var(--unit));
+  position: relative;
+  border-radius: 100vw;
+  border: calc(2 * var(--unit)) solid #e1ebec;
+  /* box-shadow: 0 0 0 calc(2 * var(--unit)) gray; */
+}
+.logo-decoration::before,
+.logo-decoration::after {
+  content: "";
+  display: block;
+  width: 1ch;
+  height: 1ch;
+  aspect-ratio: 1;
+  background-color: #1f292d;
+  border-radius: 100%;
+  z-index: -1;
+}
+.logo-decoration::before {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--unit) * -5);
+  transform: translateY(-50%);
+}
+.logo-decoration::after {
+  position: absolute;
+  top: 50%;
+  right: calc(var(--unit) * -5);
+  transform: translateY(-50%);
+}
+.g {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: baseline;
+}
+.g > * {
+  height: fit-content;
+  text-align: center;
+}
+
+/*  */
+
+a {
+  text-decoration: none;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 55px;
+  padding: 37px 42px;
+  border-radius: 14px;
+  background-color: #ffffff;
+}
+
+.card:hover{
+  box-shadow: 0px 0px 17px 8px rgba(37, 93, 91, 0.2);
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  grid-column: 2 / 4;
+}
+
+.card-content {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-img {
+  display: block;
+  width: 100%;
+  border-radius: 14px;
+  
+}
+
+.card-author {
+  font-size: 18px;
+  color: #3f575f;
+  font-weight: 500;
+}
+
+.card-name {
+  font-size: 24px;
+  color: #334146;
+  font-weight: 600;
+}
+
+.card-genre {
+  font-size: 18px;
+  color: #3f575f;
+  font-weight: 500;
+}
+
+.card-discription {
+  font-size: 18px;
+  color: #3f575f;
+  font-weight: 600;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  gap: 90px;
+  margin-top: 60px;
+  padding-inline: 55px;
+}
+
+
+
+
+.card-button {
+  font-size: 20px;
+  background-color: #628d95;
+  color: rgba(255, 255, 255, 1);
+  border-radius: 14px;
+  display: inline-flex;
+  padding: 11px 44px;
+  align-self: start;
+  transition: 0.15s;
+}
+
+.card-button:hover {
+  transform: scale(1.05);
+ }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 55px;
+  background-image: linear-gradient(90deg, #e1ebec, #adc7cc);
+  position: sticky;
+  top: 0;
+
+}
+
+.header-logo {
+  font-size: 24px;
+  color: rgba(12, 44, 49, 1);
+  letter-spacing: 5px;
+}
+
+.header-button {
+  font-size: 24px;
+  color: rgba(12, 44, 49, 1);
+}
+
+.header-button:hover {
+  color: #ffffff;
+}
+
+.form {
+  border-radius: 14px;
+  background-color: #66bbe3;
+  width: 1038px;
+  height: 763px;
+  align-items: center;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 55px;
+  background-color: #1f292d;
+  position: sticky;
+  margin-top: 0;
+}

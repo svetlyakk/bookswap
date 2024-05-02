@@ -1,0 +1,127 @@
+* {
+    font-family: 'Outfit', sans-serif;
+    color: #1f292d;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #e1ebec;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1108px;
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 16px;
+}
+.logo {
+    width: 510px;
+    height: 338px;
+    
+    font-size: 128px;
+}
+
+.hero-content {
+    width: min-content;
+    position: relative;
+    margin-inline: auto;
+}
+
+.hero-paragraph {
+    margin-top: 8px;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.30ch;
+}
+
+.hero-decoration {
+    position: absolute;
+    width: 202px;
+    top: 0;
+    background-color: #496971;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 80%;
+}
+.hero-decoration::after {
+    content: '';
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 101px solid transparent;
+    border-right: 101px solid transparent;
+    
+    border-bottom: 101px solid #e1ebec;
+}
+
+@media (min-width: 900px) {
+    .hero-decoration {
+        bottom: 11%;
+        left: max(calc((100vw - 1108px) / 2 + 510px + 84px), 510px + 84px);
+        transform: translateX(0);
+    }
+    .hero-content {
+        margin-inline: 0;
+    }
+}
+
+
+:root {
+    font-size: 15px;
+}
+
+.logo-decoration {
+    --unit: calc(1ch / 10);
+    width: calc(100% - var(--unit) * 10);
+    margin-inline: auto;
+    background-color: #496971;
+    height: calc(6 * var(--unit));
+    position: relative;
+    border-radius: 100vw;
+    border: calc(2 * var(--unit)) solid #e1ebec;
+    /* box-shadow: 0 0 0 calc(2 * var(--unit)) gray; */
+}
+.logo-decoration::before,
+.logo-decoration::after {
+    content: "";
+    display: block;
+    width: 1ch;
+    height: 1ch;
+    aspect-ratio: 1;
+    background-color: #1f292d;
+    border-radius: 100%;
+    z-index: -1;
+}
+.logo-decoration::before {
+    position: absolute;
+    top: 50%;
+    left: calc(var(--unit) * -5);
+    transform: translateY(-50%);
+}
+.logo-decoration::after {
+    position: absolute;
+    top: 50%;
+    right: calc(var(--unit) * -5);
+    transform: translateY(-50%);
+}
+.g {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: baseline;
+}
+.g > * {
+    height: fit-content;
+    text-align: center;
+}
